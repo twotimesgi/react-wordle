@@ -78,7 +78,7 @@ function App() {
             {
               guesses.map((guess, i) => {
                 const isCurrentGuess = i === guesses.findIndex(val => val == null);
-                return <Row key={i} guess={isCurrentGuess ? currentGuess : guess} />
+                return <Row key={i} isLast={!isCurrentGuess && guess != null} guess={isCurrentGuess ? currentGuess : guess} solution={solution} />
               })
             }
           </div>
